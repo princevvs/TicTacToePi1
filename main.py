@@ -68,10 +68,10 @@ def refresh_screen():
     Board.display()
 
 while True:
-  refresh_screen()
+    refresh_screen()
 
 #Get the X input
-    x_choice = int(raw_input("\nX") Please choose 1 - 9"))
+    x_choice = int(input("\nX) Please choose 1 - 9. > "))
 
 # Update board
     board.update_cell(x_choice , "X")
@@ -82,7 +82,7 @@ while True:
 # Check for X winner
     if board.is_winner("X"):
         print("\nX wins!\n")
-        play_again = raw_input("Would you like to play again? (Y/N) > ").upper()
+        play_again = input("Would you like to play again? (Y/N) > ").upper()
         if play_again == "Y":
             board.reset()
             continue
@@ -92,7 +92,7 @@ while True:
 # Check for tie game
     if board.is_tie():
         print("\nTie Game!\n")
-        play_again = raw_input("Would you like to play again? (Y/N) > ").upper()
+        play_again = input("Would you like to play again? (Y/N) > ").upper()
         if play_again == "Y":
             board.reset()
             continue
@@ -101,7 +101,7 @@ while True:
 
 
 #Get the 0 input
-    o_choice = int(raw_input("\nO") Please choose 1 - 9")
+    o_choice = int(input("\nO) Please choose 1 - 9. > "))
 
 # Update board
     board.update_cell(o_choice , "O")
@@ -109,7 +109,7 @@ while True:
 # Check for O winner
     if board.is_winner("O"):
         print("\nO wins!\n")
-        play_again = raw_input("Would you like to play again? (Y/N) > ").upper()
+        play_again = input("Would you like to play again? (Y/N) > ").upper()
         if play_again == "Y":
             board.reset()
             continue
@@ -119,7 +119,7 @@ while True:
 # Check for tie game
     if board.is_tie():
         print("\nTie Game!\n")
-        play_again = raw_input("Would you like to play again? (Y/N) > ").upper()
+        play_again = input("Would you like to play again? (Y/N) > ").upper()
         if play_again == "Y":
             board.reset()
             continue

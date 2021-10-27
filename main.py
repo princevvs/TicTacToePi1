@@ -65,7 +65,7 @@ def refresh_screen():
 
     print_header()
 
-    Board.display()
+    board.display()
 
 while True:
     refresh_screen()
@@ -126,4 +126,3 @@ while True:
         else:
             break
 
-#PArt 5

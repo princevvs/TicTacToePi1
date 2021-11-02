@@ -128,17 +128,19 @@ while True:
 
 
 #Get the 0 input
-    #o_choice = int(input("\nO) Please choose 1 - 9. > "))
+    o_choice = int(input("\nO) Please choose 1 - 9. > "))
 
-board.ai_move("O")
+    board.ai_move("O")
 
-refresh_screen()
 
 # Update board
-#board.update_cell(o_choice , "O")
+    board.update_cell(o_choice , "O")
+
+    refresh_screen()
+
 
 # Check for O winner
-if board.is_winner("O"):
+    if board.is_winner("O"):
         print("\nO wins!\n")
         play_again = input("Would you like to play again? (Y/N) > ").upper()
         if play_again == "Y":
@@ -148,7 +150,7 @@ if board.is_winner("O"):
             break
 
 # Check for tie game
-if board.is_tie():
+    if board.is_tie():
         print("\nTie Game!\n")
         play_again = input("Would you like to play again? (Y/N) > ").upper()
         if play_again == "Y":
@@ -156,4 +158,3 @@ if board.is_tie():
             continue
         else:
             break
-

@@ -1,4 +1,5 @@
 import os
+import random
 os.system("clear")
 
 class Board():
@@ -17,6 +18,15 @@ class Board():
         self.cells[cell_no] = player
 
     def is_winner(self, player):
+
+      result = True
+      for cell_no in [1,2,3]:
+          if self.cells[cell_no] != player:
+              result = False
+
+      if result == True:
+          return True
+
       if self.cells[1]==player and self.cells[2]==player and self.cells[3]==player:
           return True
       if self.cells[4]==player and self.cells[5]==player and self.cells[6]==player:
@@ -64,7 +74,7 @@ class Board():
           self.update_cell(5, player)
 
       #AI Can win
-
+      
 
       #AI Blocks
 
@@ -74,6 +84,14 @@ class Board():
           if self.cells[i] == " ":
               self.update_cell(i,player)
               break
+
+
+      rand = list(range(1,10))
+      random.shuffle(rand)
+      for x in rand:
+            if self.cells[x] == " ":
+                self.update_cells(x, player)   
+                break
 
 
 
@@ -131,6 +149,8 @@ while True:
     o_choice = int(input("\nO) Please choose 1 - 9. > "))
 
     board.ai_move("O")
+
+    refresh_screen()
 
 
 # Update board
